@@ -6,11 +6,20 @@ containerEl.setAttribute("id", "container-el");
 document.body.appendChild(containerEl);
 
 let displayEl = document.createElement("input");
+displayEl.readOnly = true;
+displayEl.value = count;
 containerEl.appendChild(displayEl);
 
 let select = document.createElement("select");
 select.id = "counting";
 containerEl.appendChild(select);
+
+const placeholder = document.createElement("option");
+placeholder.textContent = "Choose mode";
+placeholder.value = "";
+placeholder.disabled = true;
+placeholder.selected = true;
+select.appendChild(placeholder);
 
 let modes = ["integers", "whole", "natural"];
 
@@ -20,13 +29,6 @@ modes.forEach((modes) => {
   option.textContent = modes[0].toUpperCase() + modes.slice(1);
   select.appendChild(option);
 });
-
-const placeholder = document.createElement("option");
-placeholder.textContent = "Choose mode";
-placeholder.value = "";
-placeholder.disabled = true;
-placeholder.selected = true;
-select.appendChild(placeholder);
 
 let resetContainer = document.createElement("div");
 resetContainer.setAttribute("id", "reset-container");
@@ -89,7 +91,7 @@ minusBtn.addEventListener("click", function () {
 
 resetBtn.addEventListener("click", function () {
   count = 0;
-  displayEl.value = "";
+  displayEl.value = count;
   select.value = "";
 
   plusBtn.style.display = "none";
