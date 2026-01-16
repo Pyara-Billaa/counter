@@ -26,15 +26,15 @@ let buttonContainer = document.createElement("div");
 buttonContainer.setAttribute("id", "btn-container");
 document.body.appendChild(buttonContainer);
 
-let plusBtn = document.createElement("button");
-plusBtn.setAttribute("id", "plus-btn");
-plusBtn.textContent = "+";
-buttonContainer.appendChild(plusBtn);
-
 let minusBtn = document.createElement("button");
 minusBtn.setAttribute("id", "minus-btn");
 minusBtn.textContent = "-";
 buttonContainer.appendChild(minusBtn);
+
+let plusBtn = document.createElement("button");
+plusBtn.setAttribute("id", "plus-btn");
+plusBtn.textContent = "+";
+buttonContainer.appendChild(plusBtn);
 
 let resetBtn = document.createElement("button");
 resetBtn.setAttribute("id", "reset-btn");
